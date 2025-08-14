@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Master Prompter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="title">Master Prompter</h1>
+          <p class="subtitle">Turn rough ideas into production-ready prompts for ChatGPT, Grok, Gemini, Perplexity, and MiniMax.</p>
+          <div class="cta">
+            <a href="#builder" class="btn">Start Building</a>
+            <a href="#benefits" class="btn ghost">Why it works</a>
+          </div>
+        </div>
+        <div class="hero-glow"></div>
+      </section>
+
+      <section id="benefits" class="benefits">
+        <h2>Benefits of Prompt Enhancer</h2>
+        <div class="grid">
+          <div class="card fade-in">
+            <h3>Human-like outputs</h3>
+            <p>Persona, few-shot, and constraints produce natural, coherent results with fewer hallucinations.</p>
+          </div>
+          <div class="card fade-in delay1">
+            <h3>Faster iteration</h3>
+            <p>Prompt chaining and refinement cut drafting time significantly for writing, code, and design.</p>
+          </div>
+          <div class="card fade-in delay2">
+            <h3>Cross-model ready</h3>
+            <p>Provider-specific guidance for ChatGPT, Grok, Perplexity, Gemini, and MiniMax.</p>
+          </div>
+          <div class="card fade-in delay3">
+            <h3>Multimodal aware</h3>
+            <p>Support for image context and media resolution preferences (low/medium/high).</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <h2>Get updates</h2>
+        <p>Subscribe to the newsletter for new techniques and templates.</p>
+        <form id="newsletter">
+          <input id="email" type="email" placeholder="Enter your email" required />
+          <button type="submit" class="btn">Subscribe</button>
+          <span id="status" class="status"></span>
+        </form>
+      </section>
+
+      <h2 id="builder">Prompt Builder</h2>
+      <form id="form">
+        <div class="row">
+          <label>Category</label>
+          <select name="category" required>
+            <option>Content Writing</option>
+            <option>Design</option>
+            <option>Code</option>
+            <option>Image Generation</option>
+          </select>
+        </div>
+        <div class="row">
+          <label>Role (optional)</label>
+          <input name="role" placeholder="Act as a ..." />
+        </div>
+        <div class="row">
+          <label>Idea</label>
+          <textarea name="idea" placeholder="Describe your idea" required></textarea>
+        </div>
+        <div class="row">
+          <label>Sources (comma-separated)</label>
+          <input name="sources" placeholder="URLs, notes" />
+        </div>
+        <div class="row">
+          <label>Image context (optional)</label>
+          <input name="image" placeholder="Screenshot/image description" />
+        </div>
+        <div class="row">
+          <label>Tones (comma-separated)</label>
+          <input name="tones" placeholder="e.g., formal, witty" />
+        </div>
+        <div class="row">
+          <label>Output length</label>
+          <select name="output_length">
+            <option value="">(none)</option>
+            <option>short</option>
+            <option>medium</option>
+            <option>long</option>
+          </select>
+        </div>
+        <div class="row">
+          <label>Output format</label>
+          <input name="output_format" placeholder="list, table, structured sections, ..." />
+        </div>
+        <div class="row">
+          <label>Temperature (0.0 - 1.0)</label>
+          <input name="temperature" type="number" step="0.1" min="0" max="1" placeholder="e.g., 0.7" />
+        </div>
+        <div class="row">
+          <label>Media resolution</label>
+          <select name="media_resolution">
+            <option value="">(none)</option>
+            <option value="low">low</option>
+            <option value="medium">medium</option>
+            <option value="high">high</option>
+          </select>
+        </div>
+        <div class="row">
+          <label>Target model (hint)</label>
+          <input name="model" placeholder="e.g., gemini-1.5-pro, gpt-4o, claude-3" />
+        </div>
+        <div class="row">
+          <label>Provider</label>
+          <select name="provider">
+            <option value="">(none)</option>
+            <option>ChatGPT</option>
+            <option>Grok</option>
+            <option>Perplexity</option>
+            <option>Gemini</option>
+            <option>MiniMax</option>
+          </select>
+        </div>
+        <div class="row">
+          <label>Extras (comma-separated)</label>
+          <input name="extras" placeholder="examples, citations, ..." />
+        </div>
+        <div class="actions">
+          <button type="submit">Generate Prompt</button>
+        </div>
+      </form>
+      <section class="output">
+        <div class="row">
+          <label>Token estimate</label>
+          <input id="tokens" readonly placeholder="—" />
+        </div>
+      </section>
+      <section class="output">
+        <h2>Optimized Prompt</h2>
+        <textarea id="output" readonly></textarea>
+        <div class="actions">
+          <button id="enhance" class="btn ghost" type="button">Enhance with Gemini</button>
+        </div>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+  </html>
+
+
