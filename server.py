@@ -12,7 +12,7 @@ from prompter_core import build_prompt, normalize_list, VALID_CATEGORIES
 _GEMINI_AVAILABLE = False
 try:
     import google.generativeai as genai  # type: ignore
-    if os.getenv("GOOGLE_API_KEY"):
+    if os.getenv("AIzaSyC5BYdTu4x-Vh_w5UGIysUzjDXPtCTKrMQ"):
         genai.configure(api_key=os.getenv("AIzaSyC5BYdTu4x-Vh_w5UGIysUzjDXPtCTKrMQ"))
         _GEMINI_AVAILABLE = True
 except Exception:
